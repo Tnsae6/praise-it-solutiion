@@ -1,0 +1,31 @@
+{% extends 'posts/base.html' %}
+{% load static %}
+
+           
+{%block content%}
+
+                                <h2>Frequently Asked Question</h2>     
+                                    <div class="faq-area">
+                                        <div class="accordion" id="faq-wraper">
+                                            <div class="card">
+                                                <div class="card-header" id="faq-2">
+                                                <h2 class="faq_title">
+                                                        <a class="collapsed" type="button" data-toggle="collapse" data-target="#faq_2" aria-expanded="false" aria-controls="faq_2">
+                                                        {% for faqs in faq %}
+                                                            <span> {{faqs.question}}</span>
+                                                            <i class="faq-icon"></i>
+                                                        </a>
+                                                    </h2>
+                                                </div>
+                                                <div id="faq_2" class="collapse" aria-labelledby="faq-2" data-parent="#faq-wraper">
+                                                    <div class="card-body">
+                                                       {{ faqs.answer }}
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                       
+
+{% endblock %}

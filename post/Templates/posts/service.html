@@ -1,0 +1,338 @@
+{% extends 'posts/base.html' %}
+{% load static %}
+
+           
+{%block content%}
+            <!-- header end -->
+            <!-- ========== -->
+            
+            
+            <!-- ================== -->
+            <!-- site-content start -->
+            <main class="site-content">
+                <div class="innerPage-banner">
+                    <div class="container">
+                        <div class="d-flex flex-wrap">
+                            <div class="pageBanner-content">
+                            {%for intros in intro %}
+                                <h1>Praise IT Solutions</h1>
+                                <h2>We Serve You</h2>
+                                {%endfor %}
+                                <div class="breadcrumbs">
+                                    <a href="{% url 'index'%}">Home</a>
+                                    <span>Service</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="scroling-lines">
+                        <span>
+                            <span data-parallax='{"y":750, "smoothness":45}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":-550, "smoothness":55}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":250, "smoothness":65}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":650, "smoothness":25}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":-450, "smoothness":45}'></span>
+                        </span>
+                    </div>
+                </div>
+                <!-- /.innerPage-banner -->
+                
+                 
+                
+
+                <div class="page-content">
+                    <div class="container-xl">
+                        <div class="row">
+                            <div class="col-lg-8 order-lg-2 order-1">
+                                <article class="single-service">
+                                {% for main in main_service %}
+                                <div class="feature-content" id="{{ main.redirect }}"> 
+                                    <h2>{{ main.names }}</h2>
+                                    <p>
+                                    {{ main.explain }}
+                                    </p> 
+                                    <figure>
+                                        <img src="{{ main.picture.url }}" alt="Service Title" />
+                                    </figure>
+                                </div>
+                                 {% endfor %}
+                                <!-- </article> -->
+                            <!-- </div>
+                         </div>  
+                    </div>  
+                </div> -->
+                
+                
+                            
+                                    
+                <!-- <div class="page-content">
+                    <div class="container-xl">
+                        <div class="row">
+                            <div class="col-lg-8 order-lg-2 order-1" id="cctv">
+                                <article class="single-service">
+                                    
+                                    <div class="feature-content" id="cctv">
+                                    <figure>
+                                        <img src="{%static 'assets/img/service/service-single.jpg'%}" alt="Service Title" />
+                                    </figure>
+                                   
+                                    <h2>CCTV Service</h2>
+                                    <p>
+                                        Closed Circuit Television (CCTV) surveillance is an important tool to successfully monitor premises and deter crime.  Large number of businesses and government agencies use CCTV to monitor and collect video/audio evidence.    
+                                        Wise Tech Group deployed and engaged in maintaining medium to enterprise size CCTV surveillance systems consisting of hundreds cameras. We deployed surveillance system that allow our customers to monitor multiple locations from a single Security Operations Center (SOC).  
+                                        Our engineers have knowledge and necessary field experience to design and implement the system that will meet your needs and budget, while giving you flexibility to expand as your business growth.</p>
+                                    </div>
+                                    <div class="feature-content" id="telephone">
+                                    <figure>
+                                        <img src="{%static 'assets/img/service/10.jpg'%}" alt="Service Title" />
+                                    </figure>
+                                    <h2>Telephone(pbx) System</h2>
+                                    <p>PBX stands for Private Branch Exchange, which is a private telephone network used within a company or organization. The users of the PBX phone system can communicate internally (within their company) and externally (with the outside world), using different communication channels like Voice over IP, ISDN or analog.
+                                        </p>
+                                    </div>    
+                                    <div class="feature-content" id="network">
+                                    <figure>
+                                        <img src="{%static 'assets/img/service/01.jpeg'%}" alt="Service Title" />
+                                    </figure>
+                                    <h2>Network Service</h2>
+                                    <p>
+                                        At Praise ICT Solutions we consider proactive network monitoring to be one of most important steps towards a well managed network. With the help of our monitoring software our Help Desk can address issues on a customer network before small problems grow in to big outages. 
+                                    </P>
+                                    <p> We deploy proactive monitoring tools to help us maintain Network infrastructure. it does not matter whether you are running a small office with 5 computers or a large businesses with several hundred devices. Network outages can have significant impact on the business operations, customer experience, and business ability to deliver. 
+                                     </p>
+                                    <div class="feature-content" id="IT-support">
+                                    <figure>
+                                        <img src="{%static 'assets/img/service/12.jpg'%}" alt="Service Title" />
+                                    </figure>
+                                    <h2>IT support Service</h2>
+                                    <p>
+                                       We offer proactive IT support and technology management services at affordable, consistent monthly rates. Our subscription model allows your business to effectively budget for and plan IT expenses, saving you money and time in the long run.</p>
+                                    </div>    
+                                    <div class="feature-content" id="webdesign">  
+                                    <figure>
+                                        <img src="{%static 'assets/img/service/02.jpeg'%}" alt="Service Title" />
+                                    </figure>  
+                                    <h2>Web Design Service</h2>
+                                    <p>
+                                       We are a full-service web design and development company offering a variety of web design services. Not sure what you need? Schedule a free consultation and we can discuss it in detail. We are always happy to answer your questions and help you understand what you need, and what you don't need.</p>
+                                    </div> -->
+                                    <div class="page-content">
+                                        <div class="container-xl">
+                                            <div class="row">
+                                                <div class="col-lg-8 order-lg-2 order-1">
+                                                   <!-- <article class="single-service"> -->
+                                                    <h2>Key Benefits of our Service</h2>
+                                                    {%for benefit in benefits%}
+                                                     <p> {{ benefit.explain }}</p>
+                                                    {% endfor %}
+                                                     <h2>Our technology level</h2>
+                                                    {%for tech in techlevel %}
+                                                      <p> {{ tech.explain }} </p>
+                                                    {% endfor %}
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                            <div class="key-feature">
+                                                <i class="icofont-ui-timer"></i>
+                                                <div class="feature-content" >
+                                                    <h3>Save Your Time</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="key-feature">
+                                                <i class="icofont-money"></i>
+                                                <div class="feature-content">
+                                                    <h3>Earn More Money</h3> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="key-feature">
+                                                <i class="icofont-businessman"></i>
+                                                <div class="feature-content" >
+                                                    <h3>Trusted Partners</h3>
+                                                      </div>
+                                            </div>
+                                        </div>
+                                       
+                                      
+                                        <div class="col-md-6">
+                                            <div class="key-feature">
+                                                <i class="icofont-settings-alt"></i>
+                                                <div class="feature-content">
+                                                    <h3>100% Satisfaction</h3>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                    </div>
+                                    <h2>Frequently Asked Question</h2>
+                                    
+
+                                        
+                                    <div class="faq-area">
+                                        <div class="accordion" id="faq-wraper">
+                                            <div class="card">
+                                                <div class="card-header" id="faq-2">
+                                                <h2 class="faq_title">
+                                                        <a class="collapsed" type="button" data-toggle="collapse" data-target="#faq_2" aria-expanded="false" aria-controls="faq_2">
+                                                        {% for faqs in faq %}
+                                                            <span> {{faqs.question}}</span>
+                                                            <i class="faq-icon"></i>
+                                                        </a>
+                                                    </h2>
+                                                </div>
+                                                <div id="faq_2" class="collapse" aria-labelledby="faq-2" data-parent="#faq-wraper">
+                                                    <div class="card-body">
+                                                       {{ faqs.answer }}
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                            <div class="card active-faq">
+                                                <div class="card-header" id="faq-1">
+                                                    <h2 class="faq_title">
+                                                        <a type="button" data-toggle="collapse" data-target="#faq_1" aria-expanded="true" aria-controls="faq_1">
+                                                            <span>Do I need to make a payment?</span>
+                                                            <i class="faq-icon"></i>
+                                                        </a>
+                                                    </h2>
+                                                </div>
+
+                                                <div id="faq_1" class="collapse show" aria-labelledby="faq-1" data-parent="#faq-wraper">
+                                                    <div class="card-body">
+                                                        You will pay when the time is right!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="faq-3">
+                                                    <h2 class="faq_title">
+                                                        <a class="collapsed" type="button" data-toggle="collapse" data-target="#faq_3" aria-expanded="false" aria-controls="faq_3">
+                                                            <span>Can I track your work?</span>
+                                                            <i class="faq-icon"></i>
+                                                        </a>
+                                                    </h2>
+                                                </div>
+                                                <div id="faq_3" class="collapse" aria-labelledby="faq-3" data-parent="#faq-wraper">
+                                                    <div class="card-body">
+                                                        Ofcourse! don't forget it is your property. :D
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header" id="faq-4">
+                                                    <h2 class="faq_title">
+                                                        <a class="collapsed" type="button" data-toggle="collapse" data-target="#faq_4" aria-expanded="false" aria-controls="faq_4">
+                                                            <span> Where can I find you?</span>
+                                                            <i class="faq-icon"></i>
+                                                        </a>
+                                                    </h2>
+                                                </div>
+                                                <div id="faq_4" class="collapse" aria-labelledby="faq-4" data-parent="#faq-wraper">
+                                                    <div class="card-body">
+                                                        Try dailling us on the phone we provided on this website or email us using the email. On the other hand you can use the contact us page too.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                    <div class="col-lg-4 order-lg-1 order-2">   
+                    <aside class="service-aside">
+                                        <div class="widget-single category-widget">
+                                            <h2>Service Categories</h2>
+                                            <ul>
+                                            {% for main in main_service %}
+                                                <li>
+                                                    <a href="#{{ main.redirect }}">
+                                                        <span>{{ main.names }}</span>
+                                                        <i class="icofont-double-right"></i>
+                                                    </a>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>    
+                                        </div>         
+                    </aside>
+                    </div>
+
+                    <div class="col-lg-4 order-lg-1 order-2">   
+                    <aside class="service-aside">
+                                        <div class="widget-single category-widget">
+                                            <h2>Service Categories</h2>
+                                            <ul>
+                                            {% for main in choose_service %}
+                                                <li>
+                                                    <a href="{{ main.get_absolute_url }}">
+                                                        <span>{{ main.names }}</span>
+                                                        <i class="icofont-double-right"></i>
+                                                    </a>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>    
+                                        </div>         
+                    </aside>
+                    </div>
+                    
+                                <!-- <div class="col-lg-4 order-lg-1 order-2">
+                                <aside class="service-aside">
+                                    <div class="widget-single category-widget">
+                                        <h2>Service Categories</h2>
+                                        <ul>
+                                            <li>
+                                                <a href="#cctv">
+                                                    <span>Supply and installation of cctv camera</span>
+                                                    <i class="icofont-double-right"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#telephone">
+                                                    <span>supply and installation of telephone systems(pbx)</span>
+                                                    <i class="icofont-double-right"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#network">
+                                                    <span>Network Installation</span>
+                                                    <i class="icofont-double-right"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#IT-support">
+                                                    <span>IT support for offices</span>
+                                                    <i class="icofont-double-right"></i>                                        
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#webdesign">
+                                                    <span>Website Design</span>
+                                                    <i class="icofont-double-right"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                   
+                                </aside>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /.page-content -->
+            </main>
+            <!-- site-content end -->
+            <!-- ================ -->
+
+            <!-- ============ -->
+            <!-- footer start -->
+{% endblock %}

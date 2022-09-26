@@ -1,0 +1,173 @@
+{% extends 'posts/base.html' %}
+{% load static %}
+
+           
+{%block content%}
+            <!-- header end -->
+            <!-- ========== -->
+            
+            <!-- ================== -->
+            <!-- site-content start -->
+            <main class="site-content">
+                <div class="innerPage-banner">
+                    <div class="container">
+                        <div class="d-flex flex-wrap">
+                            <div class="pageBanner-content">
+                                <h1>Praise IT Solutions</h1>
+                                <h2>shop </h2>
+                                <div class="breadcrumbs">
+                                    <a href="{% url 'index'%}">Home</a>
+                                    <span>shop</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="scroling-lines">
+                        <span>
+                            <span data-parallax='{"y":750, "smoothness":45}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":-550, "smoothness":55}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":250, "smoothness":65}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":650, "smoothness":25}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":-450, "smoothness":45}'></span>
+                        </span>
+                    </div>
+                </div>
+                <!-- /.innerPage-banner -->
+                <div class="col-lg-6">
+                                <div class="intro-gallery">
+                                    <div class="tab-content" id="img-gallery">
+                                        {% for set in sets %}   
+                                        <div class="tab-pane fade show active" id=" {{set.type }}" role="tabpanel" aria-labelledby="tab-02">
+                                            <figure>
+                                                <img src="{{ set.image1.url }}" alt="Gallery Image" />
+                                            </figure>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    <ul class="about-gallery-list nav" id="about-imgs" role="tablist">
+                                        
+                                        {% for set in sets %}   
+                                        <li>
+                                            <a id="tab-01" data-toggle="tab" href="#{{ set.type  }}" role="tab" aria-controls="{{ set.type }}" aria-selected="false">
+                                                <figure>
+                                                    <img src="{{ set.image1.url }}" alt="about img-gallery"/>
+                                                     <h3> {{ set.price1 }} </h3>
+                                                </figure>
+                                            </a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="team-section">
+                        <div class="container">
+                            <div class="d-xl-flex d-block justify-content-xl-between align-items-xl-center">
+                                <div class="section-header wow animate__animated animate__slow animate__fadeInUp">
+                                    <h2>Shop Items</h2>
+                                    <p>We provide high level quality products!</p>
+                                </div>
+                                <div class="team-button wow animate__animated animate__slow animate__fadeInUp" data-wow-delay="0.3s">
+                                    <a href="contact.html" class="theme-btn"> Tell Us Which Item You want <i class="icofont-double-right"></i></a>
+                                </div>
+                            </div>
+                        </div>        
+                        <div class="container-fluid mt-5 pt-xl-5">
+                            <div class="row">
+                                
+                                {% for exp in item  %}
+                                <div class="col-lg-3 col-sm-6">
+                                    <figure class="team-member wow animate__animated animate__slower animate__fadeInUp">                                            
+                                        <img src="{{ exp.photo.url }}" alt=" {{ exp.name }}" />
+                                        <figcaption>
+                                            <h3> {{exp.name}} </h3>
+                                            <p> {{ exp.Price }}</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                {% endfor %}
+                                <!-- <div class="col-lg-3 col-sm-6">
+                                    <figure class="team-member wow animate__animated animate__slower animate__fadeInUp" data-wow-delay="0.2s">
+                                        <img src="{%static 'assets/img/team/home-page/06.jpg'%}" alt="Team Member Name" />
+                                        <figcaption>
+                                            <h3>2ndPerson name</h3>
+                                            <p>Installation Mechanic</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <figure class="team-member wow animate__animated animate__slower animate__fadeInUp" data-wow-delay="0.4s">
+                                        <img src="{%static 'assets/img/team/home-page/05.jpg'%}" alt="Team Member Name" />
+                                        <figcaption>
+                                            <h3>3rdPerson name</h3>
+                                            <p>Network installer</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <figure class="team-member wow animate__animated animate__slower animate__fadeInUp" data-wow-delay="0.6s">
+                                        <img src="{%static 'assets/img/team/home-page/070.jpg'%}" alt="Team Member Name" />
+                                        <figcaption>
+                                            <h3>4th person</h3>
+                                            <p>Web Designer</p>
+                                        </figcaption>
+                                    </figure>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="page-content">
+                    <div class="error-area">
+                        <div class="container">
+                            <div class="error-content">
+                                <div class="row justify-content-center">
+                                    <div class="col-xl-9">
+                                        <div class="row">
+                                            <div class="col">
+                                                <span>s</span>
+                                            </div>
+                                            <div class="col">
+                                                <span>h</span>
+                                            </div>
+                                            <div class="col">
+                                                <span>o</span>
+                                            </div>
+                                            <div class="col">
+                                                <span>p</span>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-between align-items-center">
+                                            <div class="col-lg-7 text-center text-lg-left mb-4 mb-lg-0">
+                                                <h3>Coming soon!</h3>
+                                                <p>Sorry, But we will bring you our stuffs soon.</p>
+                                            </div>
+                                            <div class="col-lg-5 text-center text-lg-right">
+                                                <a href="{% url 'index'%}"><i class="icofont-double-left"></i> Back To Home</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.page-content -->
+            </main>
+            <!-- site-content end -->
+            <!-- ================ -->
+
+            <!-- ============ -->
+            <!-- footer start -->
+{% endblock %}

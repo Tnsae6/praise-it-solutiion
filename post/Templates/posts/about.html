@@ -1,0 +1,236 @@
+{% extends 'posts/base.html' %}
+{% load static %}
+
+           
+{%block content%}
+            <!-- header end -->
+            <!-- ========== -->
+            
+            <!-- ================== -->
+            <!-- site-content start -->
+            <main class="site-content">
+                <div class="innerPage-banner">
+                    <div class="container">
+                        <div class="d-flex flex-wrap">
+                            <div class="pageBanner-content">
+                                <h1>Praise IT Solutions</h1>
+                                <h2>About Us.</h2>
+                                <div class="breadcrumbs">
+                                    <a href="{% url 'index'%}">Home</a>
+                                    <span>About</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="scroling-lines">
+                        <span>
+                            <span data-parallax='{"y":750, "smoothness":45}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":-550, "smoothness":55}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":250, "smoothness":65}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":650, "smoothness":25}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":-450, "smoothness":45}'></span>
+                        </span>
+                    </div>
+                </div>
+                <!-- /.innerPage-banner -->
+
+                <div class="page-content">
+                    <!-- ===================== -->
+                    <!-- welcome-section start -->
+                    <div class="welcome-section">
+                        <div class="container-xl">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    
+                                    {% for intro in welcomes  %}
+                                        
+                                    
+                                        
+                                    <section>
+                                        <h2>{{ intro.title }}</h2>
+                                        <p>
+                                           {{ intro.passage }}
+                                         </p>
+                                        <a href="{% url 'index'%}" class="theme-btn">Contact Us <i class="icofont-double-right"></i></a>
+                                    </section>
+                                    {% endfor %}
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="welcome-tab">
+                                        <ul class="welcomeTab-list nav justify-content-center" id="welcome-tabs" role="tablist">
+                                            {% for mission in missions %}
+                                            
+                                            
+                                            <li>
+                                                <a id="tab-01" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false"> {{ mission.title }} </a>
+                                            </li>
+
+                                             {%endfor%}
+                                             {% for vision in visions %}
+                                            <li>
+                                                <a class="active" id="tab-02" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="true"> {{ vision.title }} </a>
+                                            </li>
+                                             {%endfor%}
+                                            {% for values in value %}
+                                            <li>
+                                                <a id="tab-03" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab2" aria-selected="false"> {{ values.title }} </a>
+                                            </li>
+                                             {%endfor%}
+                                        </ul>
+                                        <div class="tab-content" id="welcomeTab-content">
+                                            <div class="tab-pane fade" id="tab1" role="tabpanel" aria-labelledby="tab-01">
+                                                {% for mission in missions %}
+                                                <p>
+                                                {{ mission.description }}
+                                              </p>
+                                                 {%endfor%}
+                                                <p>
+                                                   
+                                                </p>
+                                                <strong>Our team is focused on creating an enterprise that brings value to the consumers through responsive and relentless delivery of the right solutions and creating a destination workplace for employees.
+                                                </strong>
+                                            </div>
+                                            <div class="tab-pane fade show active" id="tab2" role="tabpanel" aria-labelledby="tab-02">
+                                                {% for vision in visions %}
+                                                <p>
+                                                  {{vision.description }}</p>
+                                                {%endfor%}
+                                                <p>
+                                                    
+                                                </p>
+                                                <strong>Our team is focused on creating an enterprise that brings value to the consumers through responsive and relentless delivery of the right solutions and creating a destination workplace for employees.
+                                                </strong>
+                                            </div>
+                                            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab-03">
+                                                {% for values in value %}
+                                                <p>
+                                                    {{ values.description }}
+                                                </p>
+                                                {%endfor%}
+                                                <p>
+                                                 
+                                                </p>
+                                                <strong>Our team is focused on creating an enterprise that brings value to the consumers through responsive and relentless delivery of the right solutions and creating a destination workplace for employees.
+                                                </strong>
+                                                
+                                                 
+                                                 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- welcome-section end -->
+                    <!-- =================== -->
+
+                    <!-- ================= -->
+                    <!-- video-section start -->
+                    <div class="video-section">
+                        <div class="container-xl">
+                            <div class="row align-items-center justify-content-xl-between">
+                                <div class="col-lg-6">
+                                    <figure class="vdo-onLeft">
+                                        <img src="{%static 'assets/img/videos-banner.jpg'%}" alt="Video Thumb"/>
+                                        <a class="video-link mfp-iframe"  href="https://www.youtube.com/watch?v=iu2mkdC32x0">
+                                            <i class="icofont-ui-play"></i>
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="col-xl-4 pl-xl-0 col-lg-6 overflow-hidden">
+                                    <div class="video-content right">
+                                        <h2 class="wow animate__animated animate__slow animate__fadeInUp">Check Video To Find Out More Our Service.</h2>
+                                        <p class="wow animate__animated animate__slow animate__fadeInUp">ENJOY</p>
+                                        <a href="{% url 'index'%}" class="theme-btn wow animate__animated animate__slow animate__fadeInUp"> Contact US <i class="icofont-double-right"></i> </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- video-section end -->
+                    <!-- =============== -->
+
+                    <!-- ================== -->
+                    <!-- team-section start -->
+                   <div class="team-section">
+                        <div class="container">
+                            <div class="d-xl-flex d-block justify-content-xl-between align-items-xl-center">
+                                <div class="section-header wow animate__animated animate__slow animate__fadeInUp">
+                                    <h2>Expert Team Members</h2>
+                                    <p>These are our top experts on their jobs</p>
+                                </div>
+                                <div class="team-button wow animate__animated animate__slow animate__fadeInUp" data-wow-delay="0.3s">
+                                    <a href="contact.html" class="theme-btn">Join With Us <i class="icofont-double-right"></i></a>
+                                </div>
+                            </div>
+                        </div>        
+                        <div class="container-fluid mt-5 pt-xl-5">
+                            <div class="row">
+                                
+                                {% for exp in expert  %}
+                                <div class="col-lg-3 col-sm-6">
+                                    <figure class="team-member wow animate__animated animate__slower animate__fadeInUp">                                            
+                                        <img src="{{ exp.photo.url }}" alt=" {{ exp.name }}" />
+                                        <figcaption>
+                                            <h3> {{exp.name}} </h3>
+                                            <p> {{ exp.job_type }}</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                {% endfor %}
+                                <!-- <div class="col-lg-3 col-sm-6">
+                                    <figure class="team-member wow animate__animated animate__slower animate__fadeInUp" data-wow-delay="0.2s">
+                                        <img src="{%static 'assets/img/team/home-page/06.jpg'%}" alt="Team Member Name" />
+                                        <figcaption>
+                                            <h3>2ndPerson name</h3>
+                                            <p>Installation Mechanic</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <figure class="team-member wow animate__animated animate__slower animate__fadeInUp" data-wow-delay="0.4s">
+                                        <img src="{%static 'assets/img/team/home-page/05.jpg'%}" alt="Team Member Name" />
+                                        <figcaption>
+                                            <h3>3rdPerson name</h3>
+                                            <p>Network installer</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <figure class="team-member wow animate__animated animate__slower animate__fadeInUp" data-wow-delay="0.6s">
+                                        <img src="{%static 'assets/img/team/home-page/070.jpg'%}" alt="Team Member Name" />
+                                        <figcaption>
+                                            <h3>4th person</h3>
+                                            <p>Web Designer</p>
+                                        </figcaption>
+                                    </figure>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                        <!-- tteam-section end -->
+                    <!-- ================ -->
+
+                    <!-- ====================== -->
+                    <!-- partners-section start -->
+                   
+                    <!-- testimony-section end -->
+                    <!-- ===================== -->
+                </div>
+                <!-- /.page-content -->
+            </main>
+            <!-- site-content end -->
+            <!-- ================ -->
+
+            <!-- ============ -->
+            <!-- footer start -->
+           {% endblock %}

@@ -1,0 +1,443 @@
+{% extends 'posts/base.html' %}
+{% load static %}
+
+
+           
+{%block content%}
+
+            
+            <!-- ================== -->
+            <!-- site-content start -->
+            <main class="site-content">
+                <!-- ==================== -->
+                
+<!-- slider-wrapper start -->
+                <div class="slider-wrapper">
+                    <div id="mainSlider" class="carousel slide carousel-fade" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            {% for single  in  slider %}
+                            {% if forloop.first %}
+                            <li data-target="#mainSlider" data-slide-to="0" class="active"></li>
+                            {% else %}
+                            <li data-target="#mainSlider" data-slide-to="{{forloop.counter}}" ></li>
+                                {%endif%}
+                            {% endfor %}
+                           
+       
+                        </ol>
+                        <!-- /.carousel-indicators -->
+
+                        <div class="carousel-inner">
+
+                            {% for  sliders  in  slider  %}
+                            {% if forloop.first %} 
+                            <div class="carousel-item active">
+                                <div class="item-inner" style="background-image: url({{sliders.image.url}});">
+                                    <div class="container h-100">
+                                        <div class="row h-100 align-items-center">
+                                            <div class="col-xl-6 col-lg-8">
+                                                <div class="slider-content">
+                                                    <h2 data-animation="animate__animated animate__fadeInUp animD-1">{{sliders.title}}</h2>
+                                                    <p data-animation="animate__animated animate__fadeInUp animD-2">{{sliders.description}}</p>
+                                                    <a href="{% url 'service' %}" data-animation="animate__animated animate__fadeInUp animD-3" class="theme-btn">All Services <i class="icofont-double-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="scroling-lines">
+                                            <span>
+                                                <span data-parallax='{"y":750, "smoothness":45}'></span>
+                                            </span>
+                                            <span>
+                                                <span data-parallax='{"y":-550, "smoothness":55}'></span>
+                                            </span>
+                                            <span>
+                                                <span data-parallax='{"y":250, "smoothness":65}'></span>
+                                            </span>
+                                            <span>
+                                                <span data-parallax='{"y":650, "smoothness":25}'></span>
+                                            </span>
+                                            <span>
+                                                <span data-parallax='{"y":-450, "smoothness":45}'></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                    {% else %}
+                            <div class="carousel-item ">
+                                <div class="item-inner" style="background-image: url({{sliders.image.url}});">
+                                    <div class="container h-100">
+                                        <div class="row h-100 align-items-center">
+                                            <div class="col-xl-6 col-lg-8">
+                                                <div class="slider-content">
+                                                    <h2 data-animation="animate__animated animate__fadeInUp animD-1">{{sliders.title}}</h2>
+                                                    <p data-animation="animate__animated animate__fadeInUp animD-2">{{sliders.description}}</p>
+                                                    <a href="{% url 'service' %}" data-animation="animate__animated animate__fadeInUp animD-3" class="theme-btn">All Services <i class="icofont-double-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="scroling-lines">
+                                            <span>
+                                                <span data-parallax='{"y":750, "smoothness":45}'></span>
+                                            </span>
+                                            <span>
+                                                <span data-parallax='{"y":-550, "smoothness":55}'></span>
+                                            </span>
+                                            <span>
+                                                <span data-parallax='{"y":250, "smoothness":65}'></span>
+                                            </span>
+                                            <span>
+                                                <span data-parallax='{"y":650, "smoothness":25}'></span>
+                                            </span>
+                                            <span>
+                                                <span data-parallax='{"y":-450, "smoothness":45}'></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {%endif%}
+                            {% endfor %}
+                           
+
+                            
+                            <!-- /.carousel-item -->
+                            
+                            <!-- /.carousel-item -->
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="carousel-control-prev" href="#mainSlider" role="button" data-slide="prev">
+                            <i class="icofont-double-left"></i>
+                        </a>
+                        <a class="carousel-control-next" href="#mainSlider" role="button" data-slide="next">
+                            <i class="icofont-double-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- slider-wrapper end -->
+                <!-- slider-wrapper end -->
+                <!-- ================== -->
+
+                <!-- ===================== -->
+                <!-- feature-section start -->
+                <div class="feature-section">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-6">
+                                <div class="section-header text-center overflow-hidden wow animate__animated animate__slow animate__fadeInUp">
+                                    <h2>Why Should Choose Us?</h2>
+                                    <p>{{ whychooseus }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-carousel">
+                            <div class="feature-single">
+                                <a>
+                                    <i class="icofont-money-bag"></i>
+                                    <span>Affordable Rates</span>
+                                </a>
+                            </div>
+                            <div class="feature-single">
+                                <a>
+                                    <i class="icofont-live-support"></i>
+                                    <span>24/7 Support</span>
+                                </a>
+                            </div>
+                            <div class="feature-single">
+                                <a>
+                                    <i class="icofont-chart-histogram-alt"></i>
+                                    <span>Different Range</span>
+                                </a>
+                            </div>
+                            <div class="feature-single">
+                                <a>
+                                    <i class="icofont-man-in-glasses"></i>
+                                    <span>Experts & Staff</span>
+                                </a>
+                            </div>
+                            <div class="feature-single">
+                                <a>
+                                    <i class="icofont-checked"></i>
+                                    <span>Trustworthy</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- feature-section end -->
+                <!-- =================== -->
+
+                <!-- =================== -->
+                <!-- about-section start -->
+               
+                <div class="about-section">
+                    <div class="container-xl">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="about-content">
+                                   {% for blog in posts %}
+                                    <h2>{{ blog.title }}</h2>
+                                    <h4>{{ blog.topic }} </h4>
+                                    <p>
+                                        {{ blog.description }}
+                                    </p>
+                                    {% endfor %}
+                                    <a href="{% url 'contact'%}" class="theme-btn">Contact Us <i class="icofont-double-right"></i></a>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <div class="intro-gallery">
+                                    <div class="tab-content" id="img-gallery">
+                                        <div class="tab-pane fade" id="tab1" role="tabpanel" aria-labelledby="tab-01">
+                                            <figure>
+                                                <img src="{%static 'assets/img/about/01.jpg" alt="Gallery Image'%}" />
+                                            </figure>
+                                        </div>
+                                        <div class="tab-pane fade show active" id="tab2" role="tabpanel" aria-labelledby="tab-02">
+                                            <figure>
+                                                <img src="{%static 'assets/img/about/02.jpg' %}" alt="Gallery Image" />
+                                            </figure>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab-03">
+                                            <figure>
+                                                <img src="{%static 'assets/img/about/03.jpg' %}" alt="Gallery Image" />
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <ul class="about-gallery-list nav" id="about-imgs" role="tablist">
+                                        <li>
+                                            <a id="tab-01" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false">
+                                                <figure>
+                                                    <img src="{%static 'assets/img/about/thumb/01.jpg'%}" alt="about img-gallery" />
+                                                </figure>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="active" id="tab-02" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="true">
+                                                <figure>
+                                                    <img src="{%static 'assets/img/about/thumb/02.jpg'%}" alt="about img-gallery" />
+                                                </figure>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a id="tab-03" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">
+                                                <figure>
+                                                    <img src="{%static 'assets/img/about/thumb/03.jpg'%}" alt="about img-gallery" />
+                                                </figure>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- about-section end -->
+                <!-- ================= -->
+
+                <!-- ===================== -->
+                <!-- service-section start -->
+                <div class="service-section">
+                    <div class="container-xl">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-6">
+                                <div class="section-header text-center wow animate__animated animate__slow animate__fadeInUp">
+                                    <h2>We Offer Differnt Services</h2>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-area">
+                        <div class="container-xl">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="service-single">
+                                        <figure>
+                                            <a href="{% url 'service'%}">
+                                                <img src="{%static 'assets/img/service/01.jpeg'%}" alt="Service Thumb" />
+                                            </a>
+                                        </figure>
+                                        <div class="service-card">
+                                            <h2><a href="{% url 'service' %}" class="tdu-hover">Network installation</a></h2>
+                                            <p></p>
+                                            <a href="{% url 'service' %}">Read More <i class="icofont-double-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                 
+                                <div class="col-lg-6">
+                                    <div class="service-single">
+                                        <figure>
+                                            <a href="{% url 'service'%}">
+                                                <img src="{%static 'assets/img/service/12.jpg'%}" alt="Service Thumb" />
+                                            </a>
+                                        </figure>
+                                        <div class="service-card">
+                                            <h2><a href="{% url 'service'%}" class="tdu-hover">ICT support</a></h2>
+                                            <p></p>
+                                            <a href="{% url 'service'%}">Read More <i class="icofont-double-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="service-single">
+                                        <figure>
+                                            <a href="{% url 'service'%}">
+                                                <img src="{%static 'assets/img/service/service-single.jpg' %}" alt="Service Thumb" />
+                                            </a>
+                                        </figure>
+                                        <div class="service-card">
+                                            <h2><a href="{% url 'service'%}" class="tdu-hover">CCTV Installation </a></h2>
+                                            <p></p>
+                                            <a href="{% url 'service'%}">Read More <i class="icofont-double-right"></i></a>
+                                        </div>
+                                    </div>
+                                
+                               </div>   
+                                <div class="col-lg-6">
+                                    <div class="service-single">
+                                        <figure>
+                                            <a href="{% url 'service'%}">
+                                                <img src="{%static 'assets/img/service/04.jpg'%}" alt="Service Thumb" />
+                                            </a>
+                                        </figure>
+                                        <div class="service-card">
+                                            <h2><a href="{% url 'service'%}" class="tdu-hover">TELEPHONE(PBX) installation</a></h2>
+                                            <p></p>
+                                            <a href="{% url 'service'%}">Read More <i class="icofont-double-right"></i></a>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div> 
+                            <div class="row">  
+                                 <div class="col-lg-6">
+                                    <div class="service-single">
+                                        <figure>
+                                            <a href="{% url 'service'%}l">
+                                                <img src="{%static 'assets/img/service/02.jpeg' %}" alt="Service Thumb" />
+                                            </a>
+                                        </figure>
+                                        <div class="service-card">
+                                            <h2><a href="{% url 'service'%}" class="tdu-hover">WEB Development</a></h2>
+                                            <p></p>
+                                            <a href="{% url 'service'%}">Read More <i class="icofont-double-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a href="{% url 'service'%}" class="theme-btn">Other Services <i class="icofont-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- service-section end -->
+                <!-- =================== -->
+
+                <!-- ================= -->
+                <!-- video-section start -->
+                <div class="video-section">
+                    <div class="container-xl">
+                        <div class="row align-items-center justify-content-xl-between">
+                            <div class="col-xl-4 pr-xl-0 col-lg-6 overflow-hidden">
+                                <div class="video-content">
+                                    <h2 class="wow animate__animated animate__slow animate__fadeInUp">Check Video To Find Out More Our Service.</h2>
+                                    <p class="wow animate__animated animate__slow animate__fadeInUp"> Enjoy.</p>
+                                    <a href="{% url 'contact'%}" class="theme-btn wow animate__animated animate__slow animate__fadeInUp"> Contact US <i class="icofont-double-right"></i> </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <figure>
+                                    <img src="{%static 'assets/img/videos-banner.jpg'%}" alt="Video Thumb"/>
+                                    <a class="video-link mfp-iframe" href="https://www.youtube.com/watch?v=d_YQNQqqouc">
+                                        <i class="icofont-ui-play"></i>
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- video-section end -->
+                <!-- =============== -->
+
+                <div class="team-section">
+                        <div class="container">
+                            <div class="d-xl-flex d-block justify-content-xl-between align-items-xl-center">
+                                <div class="section-header wow animate__animated animate__slow animate__fadeInUp">
+                                    <h2>Expert Team Members</h2>
+                                    <p>These are our top experts on their jobs</p>
+                                </div>
+                                <div class="team-button wow animate__animated animate__slow animate__fadeInUp" data-wow-delay="0.3s">
+                                    <a href="contact.html" class="theme-btn">Join With Us <i class="icofont-double-right"></i></a>
+                                </div>
+                            </div>
+                        </div>        
+                        <div class="container-fluid mt-5 pt-xl-5">
+                            <div class="row">
+                                
+                                {% for exp in expert  %}
+                                <div class="col-lg-3 col-sm-6">
+                                    <figure class="team-member wow animate__animated animate__slower animate__fadeInUp">                                            
+                                        <img src="{{ exp.photo.url }}" alt=" {{ exp.name }}" />
+                                        <figcaption>
+                                            <h3> {{exp.name}} </h3>
+                                            <p> {{ exp.job_type }}</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                {% endfor %}
+                                <!-- <div class="col-lg-3 col-sm-6">
+                                    <figure class="team-member wow animate__animated animate__slower animate__fadeInUp" data-wow-delay="0.2s">
+                                        <img src="{%static 'assets/img/team/home-page/06.jpg'%}" alt="Team Member Name" />
+                                        <figcaption>
+                                            <h3>2ndPerson name</h3>
+                                            <p>Installation Mechanic</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <figure class="team-member wow animate__animated animate__slower animate__fadeInUp" data-wow-delay="0.4s">
+                                        <img src="{%static 'assets/img/team/home-page/05.jpg'%}" alt="Team Member Name" />
+                                        <figcaption>
+                                            <h3>3rdPerson name</h3>
+                                            <p>Network installer</p>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <figure class="team-member wow animate__animated animate__slower animate__fadeInUp" data-wow-delay="0.6s">
+                                        <img src="{%static 'assets/img/team/home-page/070.jpg'%}" alt="Team Member Name" />
+                                        <figcaption>
+                                            <h3>4th person</h3>
+                                            <p>Web Designer</p>
+                                        </figcaption>
+                                    </figure>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                        <!-- team-section end -->
+                <!-- team-section end -->
+                <!-- ================ -->
+
+                <!-- ====================== -->
+                <!-- partners-section start -->
+              
+                <!-- testimony-section end -->
+                <!-- ===================== -->
+            </main>
+            <!-- site-content end -->
+            <!-- ================ -->
+
+            <!-- ============ -->
+            <!-- footer start -->
+{% endblock %}

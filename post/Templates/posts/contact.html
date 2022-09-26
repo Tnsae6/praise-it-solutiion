@@ -1,0 +1,155 @@
+{% extends 'posts/base.html' %}
+{% load static %}
+
+           
+{%block content%}
+            <!-- header end -->
+            <!-- ========== -->
+            
+            <!-- ================== -->
+            <!-- site-content start -->
+            <main class="site-content">
+                <div class="innerPage-banner">
+                    <div class="container">
+                        <div class="d-flex flex-wrap">
+                            <div class="pageBanner-content">
+                                <h1>Praise IT Solutions</h1>
+                                <h2>Contact Us.</h2>
+                                <div class="breadcrumbs">
+                                    <a href="{% url 'index'%}">Home</a>
+                                    <span>Contact</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="scroling-lines">
+                        <span>
+                            <span data-parallax='{"y":750, "smoothness":45}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":-550, "smoothness":55}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":250, "smoothness":65}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":650, "smoothness":25}'></span>
+                        </span>
+                        <span>
+                            <span data-parallax='{"y":-450, "smoothness":45}'></span>
+                        </span>
+                    </div>
+                </div>
+                <!-- /.innerPage-banner -->
+
+                <div class="page-content">
+                    <!-- ================== -->
+                    <!-- contact-info start -->
+                    <div class="contact-info">
+                        <div class="container">
+                            <div class="contact-inner">
+                                <div class="row justify-content-center">
+                                    <div class="col-xl-11">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                {% for add in address %}
+                                                <div class="contact-single">
+                                                    <i class="icofont-headphone-alt-3"></i>
+                                                    
+                                                    <h4>Phone</h4>
+                                                    <p>{{ add.phone }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="contact-single">
+                                                    <i class="icofont-location-pin"></i>
+                                                    <h4>Address</h4>
+                                                    <p>{{ add.address }}</p>
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="contact-single">
+                                                    <i class="icofont-email"></i>
+                                                    <h4>E-mail</h4>
+                                                    <p>{{ add.email }}</p>
+                                                     {%endfor%}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- contact-info end -->
+                    <!-- ================ -->
+
+                    <!-- ======================= -->
+                    <!-- contact-form-area start -->
+                    {%block form%}
+                    <div  class="contact-form-area" >
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-8">
+                                    <form method="POST" action="{% url 'contact'%}" class="contact-form" >
+                                        {% csrf_token %}
+                                        <h2>We are here to help you. Get in Touch - {{ message_name }}</h2>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="text" placeholder="Name"  name="Name" required id="Name"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="Email" placeholder="Email" name="Email" required id="Email"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="tel" placeholder="Phone" name="Phone" required id="Phone"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" placeholder="Subject" name="Subject" required id="Subject"/>
+                                            </div>
+                                            <div class="col-12">
+                                                <textarea placeholder="Message" name="Message" required id="Message"></textarea>
+                                            </div>
+                                            <div class="col-12 text-center">
+                                                <button type="submit" class="theme-btn">Send Now <i class="icofont-double-right"></i></button>
+                                            </div>
+                                            
+                                            {%endblock%}
+                                        </div>
+                                    </form>
+                                    <br>
+                                     <div id="map" class="contact-map">
+                                            {% for mapaddress in map %}
+                                                
+                                                <br>
+                                                <br>
+                                                  <iframe src="{{ mapaddress.map }}" width="1080" height="720" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                               
+                                                  {% endfor %}
+                                                </div>
+                                </div>
+                            </div>
+                               
+                        </div>
+                    </div>
+                    
+                    <!-- contact-form-area end -->
+                    
+                    
+                    <!-- ======================= -->
+                    <!-- contact-form-area start -->
+                    
+                    <!-- contact-form-area end -->
+                    
+                </div>
+               
+                <!-- /.page-content -->
+            </main>
+            <!-- site-content end -->
+            <!-- ================ -->
+
+            <!-- ============ -->
+            <!-- footer start -->
+           {% endblock %}
